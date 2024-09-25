@@ -9,9 +9,12 @@
     "target": "es2022",
     "sourceMap": true,
     "outDir": "./dist",
-    "baseUrl": "./",
+    "baseUrl": "../../../../",
     "incremental": true,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "paths": {
+      "*": ["node_modules/*"]
+    }
   },
   "exclude": ["node_modules", "dist"]
 }
