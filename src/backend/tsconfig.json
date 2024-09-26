@@ -13,7 +13,12 @@
     "incremental": true,
     "skipLibCheck": true,
     "paths": {
-      "*": ["node_modules/*"]
+      "*": ["../../../../node_modules/*"],
+      "@database/*": ["database/*"],
+      "@users/*": ["users/*"],
+      "@businesses/*": ["businesses/*"],
+      "@reserves/*": ["reserves/*"],
+      "@company-services/*": ["company-services/*"]
     }
   },
   "exclude": ["node_modules", "dist"]
