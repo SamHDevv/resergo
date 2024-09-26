@@ -1,6 +1,6 @@
 import { Entity, Column, PrimaryGeneratedColumn, OneToMany, ManyToMany, JoinTable } from 'typeorm';
-import { Company } from './company.entity';
-import { UserRole } from './user-role.entity';
+import { Business } from '../../businesses/entities/business.entity';
+import { UserRole } from '../entities/user-role.entity';
 
 @Entity()
 export class User {
@@ -22,8 +22,8 @@ export class User {
   @Column({ default: true })
   active: boolean;
 
-  @OneToMany(() => Company, company => company.user)
-  companies: Company[];
+  @OneToMany(() => Business, business => business.user)
+  companies: Business[];
 
   @OneToMany(() => UserRole, userRole => userRole.user)
   userRoles: UserRole[];
