@@ -1,8 +1,8 @@
 import { Entity, Column, PrimaryGeneratedColumn, ManyToOne, JoinColumn } from 'typeorm';
-import { User } from '../../users/entities/user.entity';
+import { UserEntity } from './user.entity';
 
 @Entity()
-export class Business {
+export class CompanyEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
@@ -26,7 +26,7 @@ export class Business {
   @Column()
   schedule: string;
 
-  @ManyToOne(() => User, user => user.companies)
+  @ManyToOne(() => UserEntity, user => user.companies)
   @JoinColumn({ name: 'user_id' })
-  user: User;
+  user: UserEntity;
 }

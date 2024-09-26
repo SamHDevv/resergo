@@ -1,9 +1,9 @@
 import { Entity, Column, PrimaryGeneratedColumn, ManyToOne, JoinColumn } from 'typeorm';
-import { Service } from '../../business-services/entities/service.entity';
-import { User } from '../../users/entities/user.entity';
+import { UserEntity } from './user.entity';
+import { ServiceEntity } from './service.entity';
 
 @Entity()
-export class Reserve {
+export class ReserveEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
@@ -16,11 +16,11 @@ export class Reserve {
   @Column()
   status: string;
 
-  @ManyToOne(() => User)
+  @ManyToOne(() => UserEntity)
   @JoinColumn({ name: 'user_id' })
-  user: User;
+  user: UserEntity;
 
-  @ManyToOne(() => Service)
+  @ManyToOne(() => ServiceEntity)
   @JoinColumn({ name: 'service_id' })
-  service: Service;
+  service: ServiceEntity;
 }

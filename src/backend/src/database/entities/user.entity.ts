@@ -1,9 +1,9 @@
 import { Entity, Column, PrimaryGeneratedColumn, OneToMany, ManyToMany, JoinTable } from 'typeorm';
-import { Business } from '../../businesses/entities/business.entity';
-import { UserRole } from '../entities/user-role.entity';
+import { CompanyEntity } from './company.entity';
+import { UserRoleEntity } from './user-role.entity';
 
 @Entity()
-export class User {
+export class UserEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
@@ -22,9 +22,9 @@ export class User {
   @Column({ default: true })
   active: boolean;
 
-  @OneToMany(() => Business, business => business.user)
-  companies: Business[];
+  @OneToMany(() => CompanyEntity, company => company.user)
+  companies: CompanyEntity[];
 
-  @OneToMany(() => UserRole, userRole => userRole.user)
-  userRoles: UserRole[];
+  @OneToMany(() => UserRoleEntity, userRoleEntity => userRoleEntity.user)
+  userRoles: UserRoleEntity[];
 }
