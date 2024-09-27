@@ -21,6 +21,6 @@ export class ServiceEntity {
   @Column({ default: true })
   active: boolean;
 
-  @OneToMany(() => ReserveEntity, reserve => reserve.service)
-  reserves: ReserveEntity[];
+  // @OneToMany(() => ReserveEntity, reserve => reserve.service)
+  // reserves: ReserveEntity[];
 }

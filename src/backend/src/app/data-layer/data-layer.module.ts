@@ -1,8 +1,19 @@
 import { Module } from '@nestjs/common';
-import { databaseProviders } from './config/database.providers';
+import { TypeOrmModule } from '@nestjs/typeorm';
+import { UserEntity } from './entities/user.entity';
 
 @Module({
-    providers: [...databaseProviders],
-    exports: [...databaseProviders],
+    imports: [
+        TypeOrmModule.forRoot({
+            type: 'mysql',
+            host: 'localhost',
+            port: 3306,
+            username: 'admin',
+            password: 'admin1234567',
+            database: 'test',
+            entities: [UserEntity],
+            // synchronize: true,
+        }),
+    ],
 })
 export class DataLayerModule {}

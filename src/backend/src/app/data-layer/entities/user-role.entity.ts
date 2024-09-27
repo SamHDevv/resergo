@@ -7,12 +7,12 @@ export class UserRoleEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @ManyToOne(() => UserEntity, user => user.userRoles)
-  @JoinColumn({ name: 'user_id' })
-  user: UserEntity;
+  // @ManyToOne(() => UserEntity, user => user.userRoles)
+  // @JoinColumn({ name: 'user_id' })
+  // user: UserEntity;
 
-  @ManyToOne(() => RoleEntity, role => role.userRoles)
-  @JoinColumn({ name: 'role_id' })
-  role: RoleEntity;
+  // @ManyToOne(() => RoleEntity, role => role.userRoles)
+  // @JoinColumn({ name: 'role_id' })
+  // role: RoleEntity;
   
 }

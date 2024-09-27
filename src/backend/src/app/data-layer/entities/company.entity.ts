@@ -26,7 +26,7 @@ export class CompanyEntity {
   @Column()
   schedule: string;
 
-  @ManyToOne(() => UserEntity, user => user.companies)
-  @JoinColumn({ name: 'user_id' })
-  user: UserEntity;
+  // @ManyToOne(() => UserEntity, user => user.companies)
+  // @JoinColumn({ name: 'user_id' })
+  // user: UserEntity;
 }
