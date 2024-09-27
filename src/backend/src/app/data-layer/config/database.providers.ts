@@ -1,5 +1,9 @@
 import { join } from 'path';
 import { DataSource } from 'typeorm';
+import { UserEntity } from '../entities/user.entity';
+import { CompanyEntity } from '../entities/company.entity';
+import { ReserveEntity } from '../entities/reserve.entity';
+import { RoleEntity } from '../entities/role.entity';
 
 export const databaseProviders = [
   {
@@ -12,7 +16,7 @@ export const databaseProviders = [
         username: 'root',
         password: 'root',
         database: 'test',
-        entities: [join(__dirname, '/../**/*.entity{.ts,.js}')],
+        entities: [UserEntity],
         synchronize: true,
       });
 

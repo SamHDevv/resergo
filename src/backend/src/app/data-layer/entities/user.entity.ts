@@ -2,29 +2,61 @@ import { Entity, Column, PrimaryGeneratedColumn, OneToMany, ManyToMany, JoinTabl
 import { CompanyEntity } from './company.entity';
 import { UserRoleEntity } from './user-role.entity';
 
-@Entity()
+@Entity('User')
 export class UserEntity {
-  @PrimaryGeneratedColumn()
+  @PrimaryGeneratedColumn({
+    name: 'UserId'
+  })
   id: number;
 
-  @Column()
+  @Column({
+    name: 'Name',
+    type: 'varchar',
+    length: 100,
+    unique: false,
+    nullable: false
+  })
   name: string;
 
-  @Column()
+  @Column({
+    name: 'Email',
+    type: 'varchar',
+    length: 100,
+    unique: true,
+    nullable: false
+  })
   email: string;
 
-  @Column()
+  @Column({
+    name: 'Password',
+    type: 'varchar',
+    length: 100,
+    unique: false,
+    nullable: false
+  })
   password: string;
 
-  @Column()
+  @Column({
+    name: 'Phone',
+    type: 'varchar',
+    length: 15,
+    unique: false,
+    nullable: false
+  })
   phone: string;
 
-  @Column({ default: true })
+  @Column({ 
+    default: true,
+    name: 'Active',
+    type: 'boolean',
+    unique: false,
+    nullable: false
+   })
   active: boolean;
 
-  @OneToMany(() => CompanyEntity, company => company.user)
-  companies: CompanyEntity[];
+  // @OneToMany(() => CompanyEntity, company => company.user)
+  // companies: CompanyEntity[];
 
-  @OneToMany(() => UserRoleEntity, userRoleEntity => userRoleEntity.user)
-  userRoles: UserRoleEntity[];
+  // @OneToMany(() => UserRoleEntity, userRoleEntity => userRoleEntity.user)
+  // userRoles: UserRoleEntity[];
 }

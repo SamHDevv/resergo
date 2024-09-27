@@ -16,11 +16,11 @@ export class ReserveEntity {
   @Column()
   status: string;
 
-  @ManyToOne(() => UserEntity)
-  @JoinColumn({ name: 'user_id' })
-  user: UserEntity;
+  // @ManyToOne(() => UserEntity)
+  // @JoinColumn({ name: 'user_id' })
+  // user: UserEntity;
 
-  @ManyToOne(() => ServiceEntity)
-  @JoinColumn({ name: 'service_id' })
-  service: ServiceEntity;
+  // @ManyToOne(() => ServiceEntity)
+  // @JoinColumn({ name: 'service_id' })
+  // service: ServiceEntity;
 }
