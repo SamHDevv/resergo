@@ -7,13 +7,21 @@ export class ReserveEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column()
-  date: string;
+  @Column({
+    name: 'Date',
+    type: 'timestamp',
+    nullable: false,
+    // default: () => 'CURRENT_TIMESTAMP',
+  })
+  date: Date;
 
-  @Column()
-  hour: string;
-
-  @Column()
+  @Column({
+    name: 'Status',
+    type: 'varchar',
+    length: 100,
+    nullable: false,
+    default: 'Pendiente'
+  })
   status: string;
 
   // @ManyToOne(() => UserEntity)
