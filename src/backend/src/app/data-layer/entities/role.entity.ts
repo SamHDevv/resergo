@@ -5,10 +5,22 @@ export class RoleEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column()
+  @Column({
+    name: 'Name',
+    unique: true,
+    nullable: false,
+    type: 'varchar',
+    length: 100
+  })
   name: string;
 
-  @Column()
+  @Column({
+    name: 'Description',
+    unique: false,
+    nullable: false,
+    type: 'varchar',
+    length: 100
+  })
   description: string;
 
   // @OneToMany(() => UserRoleEntity, userRole => userRole.role)
