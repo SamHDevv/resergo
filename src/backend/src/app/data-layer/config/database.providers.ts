@@ -16,8 +16,7 @@ export const databaseProviders = [
         username: 'root',
         password: 'root',
         database: 'test',
-        entities: [UserEntity],
-        synchronize: true,
+        entities: [UserEntity]
       });
 
       return dataSource.initialize();

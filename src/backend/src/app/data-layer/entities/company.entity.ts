@@ -6,24 +6,55 @@ export class CompanyEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column()
-
-  @Column()
+  @Column({
+    name: 'Name',
+    type: 'varchar',
+    length: 100,
+    unique: false,
+    nullable: false
+  })
   name: string;
 
-  @Column()
+  @Column({
+    name: 'Adress',
+    type: 'varchar',
+    length: 100,
+    unique: false,
+    nullable: false
+  })
   adress: string;
 
-  @Column()
+  @Column({
+    name: 'Phone',
+    type: 'varchar',
+    length: 15,
+    unique: false,
+    nullable: false
+  })
   phone: string;
 
-  @Column()
+  @Column({
+    name: 'Email',
+    type: 'varchar',
+    length: 100,
+    unique: true,
+    nullable: false
+  })
   email: string;
 
-  @Column({ default: true })
+  @Column({ 
+    name: 'Active',
+    type: 'boolean',
+    unique: false,
+    default: true 
+  })
   active: boolean;
 
-  @Column()
+  @Column({
+    name: 'Description',
+    type: 'text',
+    nullable: true
+  })
   schedule: string;
 
   // @ManyToOne(() => UserEntity, user => user.companies)
