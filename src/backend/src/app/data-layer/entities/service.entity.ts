@@ -25,7 +25,7 @@ export class ServiceEntity {
   duration: string;
 
 
-  // TODO: Make sure that the price is a decimal with 2 decimal places or a float
+  // TODO: Make sure that the price is a number with 2 decimal places or a float
   
   @Column({
     name: 'Price',

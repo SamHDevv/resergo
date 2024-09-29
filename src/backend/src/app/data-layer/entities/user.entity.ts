@@ -46,12 +46,12 @@ export class UserEntity {
   phone: string;
 
   @Column({ 
-    default: true,
     name: 'Active',
     type: 'boolean',
     unique: false,
-    nullable: false
-   })
+    nullable: false,
+    default: true
+  })
   active: boolean;
 
   // @OneToMany(() => CompanyEntity, company => company.user)

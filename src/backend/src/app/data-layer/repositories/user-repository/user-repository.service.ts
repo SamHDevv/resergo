@@ -23,7 +23,7 @@ export class UserRepositoryService {
 
     async remove(id: number): Promise<void> {
         await this.userRepository.delete(id);
-    }
+    } 
 
     async find(options?: any): Promise<UserEntity[]> {
         return this.userRepository.find(options);
